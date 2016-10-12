@@ -1,1 +1,1 @@
-# Programming-Contests-Library
+# Programming Contests Library by Filip Hlasek

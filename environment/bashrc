@@ -1,0 +1,16 @@
+# Nice and clear colors
+PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+alias ls="ls -G"
+export CLICOLOR="YES"
+export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
+export GREP_OPTIONS='--color=auto'
+
+# Expand the history size
+export HISTFILESIZE=10000
+export HISTSIZE=500
+
+# Don't put duplicate lines in the history and do not add lines that start with a space
+export HISTCONTROL=erasedups:ignoredups:ignorespace
+
+# The text editor
+export EDITOR="vim"
