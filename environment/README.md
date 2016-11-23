@@ -6,6 +6,6 @@ The environment consists of three parts:
 * `vimrc` config file which contains useful vim settings
 * `cpp` template which includes all useful STL libraries and defines a few macros
 
-## Instalation
+## Installation
 
     ./install.sh

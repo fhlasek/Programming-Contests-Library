@@ -1,6 +1,3 @@
-syntax on
-highlight Normal guibg=Black guifg=White
-
 set nocompatible   " Vim is more useful without Vi compatibility
 set backspace=eol,start,indent
 set ruler          " show the line and column number
@@ -15,6 +12,15 @@ set autoindent
 set spelllang=en
 set fencs=utf8,cp1250,latin2
 set mouse=ar
+set number
+set cursorline
+
+set t_Co=256
+syntax on
+highlight Normal        ctermfg=None  ctermbg=0    cterm=None
+highlight LineNr        ctermfg=243   ctermbg=235  cterm=None
+highlight CursorLine    ctermfg=None  ctermbg=235  cterm=None
+highlight CursorLineNr  ctermfg=248   ctermbg=236  cterm=None
 
 " display non breaking spaces, tabs and trailing spaces
 set list listchars=nbsp:~,tab:» ,trail:·
