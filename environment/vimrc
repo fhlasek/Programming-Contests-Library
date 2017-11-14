@@ -1,66 +1,6 @@
-set nocompatible   " Vim is more useful without Vi compatibility
-set backspace=eol,start,indent
-set ruler          " show the line and column number
-set incsearch      " incremental search while typing
-set hlsearch       " highlight all matches
-set showcmd        " show command in the last line of the screen
-set tabstop=2
-set expandtab      " tabs are replaced by spaces
-set shiftwidth=2
-set smartindent
-set autoindent
-set spelllang=en
-set fencs=utf8,cp1250,latin2
-set mouse=ar
-set number
-set cursorline
-
-set t_Co=256
-syntax on
-highlight Normal        ctermfg=None  ctermbg=0    cterm=None
-highlight LineNr        ctermfg=243   ctermbg=235  cterm=None
-highlight CursorLine    ctermfg=None  ctermbg=235  cterm=None
-highlight CursorLineNr  ctermfg=248   ctermbg=236  cterm=None
-
-" display non breaking spaces, tabs and trailing spaces
-set list listchars=nbsp:~,tab:» ,trail:·
-
 " setting for new .cpp files
-autocmd BufNewFile *.cpp r cpp
+autocmd BufNewFile *.cpp read ~/.vim/cpp
 autocmd BufNewFile *.cpp goto 1
 autocmd BufNewFile *.cpp delete _
 autocmd BufNewFile *.cpp goto 480
 autocmd BufNewFile *.cpp startinsert
-
-" Makefile <Tab> is not replaced by spaces
-autocmd FileType make setlocal noexpandtab
-
-" tabs navigation shortcuts
-nmap <S-Left> :tabprevious<Return>
-nmap <S-Right> :tabnext<Return>
-imap <S-Left> <Esc>:tabprevious<Return>
-imap <S-Right> <Esc>:tabnext<Return>
-
-" reselect visual block after indent/outdent
-vnoremap < <gv
-vnoremap > >gv
-
-" <Tab> at the end of a word should attempt to complete it using tokens
-" from the current file
-function! My_Tab_Completion()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-P>"
-  else
-    return "\<Tab>"
-endfunction
-inoremap <Tab> <C-R>=My_Tab_Completion()<CR>
-
-" auto 'set paste' and 'set nopaste' (other option is to set pastetoggle=<F2>)
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction

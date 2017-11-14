@@ -2,7 +2,7 @@
 
 # Use .profile instead of .bashrc for Mac
 BASHRC=~/.bashrc
-VIMRC=~/.vimrc
+VIMRC=~/.vimlocal.vim
 CPP=~/.vim/cpp
 
 if [ -e $BASHRC ]; then
