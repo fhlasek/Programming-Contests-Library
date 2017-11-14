@@ -1,5 +1,5 @@
 " setting for new .cpp files
-autocmd BufNewFile *.cpp read ~/.vim/cpp
+autocmd BufNewFile *.cpp read ~/.vim/template.cpp
 autocmd BufNewFile *.cpp goto 1
 autocmd BufNewFile *.cpp delete _
 autocmd BufNewFile *.cpp goto 480

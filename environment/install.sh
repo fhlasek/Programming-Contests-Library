@@ -3,7 +3,7 @@
 # Use .profile instead of .bashrc for Mac
 BASHRC=~/.bashrc
 VIMRC=~/.vimlocal.vim
-CPP=~/.vim/cpp
+CPP=~/.vim/template.cpp
 
 if [ -e $BASHRC ]; then
   echo "Bashrc file $BASHRC already exists (not overriding it).";
@@ -23,6 +23,6 @@ mkdir -p ~/.vim/
 if [ -e $CPP ]; then
   echo "C++ template $CPP already exists (not overriding it).";
 else
-  cp cpp $CPP
+  cp template.cpp $CPP
   echo "C++ template $CPP created.";
 fi
