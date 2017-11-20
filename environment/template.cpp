@@ -1,4 +1,4 @@
-/* Written by Filip Hlasek 2016 */
+/* Written by Filip Hlasek 2017 */
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
