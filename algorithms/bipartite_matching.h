@@ -1,22 +1,8 @@
 /* Written by Filip Hlasek 2016 */
 
 class BipartiteGraph {
-  private:
-    vector<int> partity1, partity2;       // Original indexes of vertices
-    map<int, int> new_index1, new_index2; // Mapping to new indexes
-    vector< vector<int> > graph1, graph2; // Lists of neighbours per vertex
-
-    // Match the vertex v (new index) from the first partity with a vertex
-    // from the other partity.
-    // Time complexity O(number of edges in the graph)
-    bool match(int v);
-
-    // Auxilary variables used by the maximum matching algorithm
-    vector<int> matched1, matched2;
-    vector<bool> visited1, visited2;
 
   public:
-
     // Vertices in both partities can have the same index and are converted
     // to a different index in the internal representation.
     void add_edge(int index1, int index2);
@@ -31,6 +17,20 @@ class BipartiteGraph {
     // Returns a list of pairs (original index, partity), where partity is 1 or 2
     vector< pair<int, int> > maximum_independent_set();
     vector< pair<int, int> > minimum_vertex_cover();
+
+  private:
+    vector<int> partity1, partity2;       // Original indexes of vertices
+    map<int, int> new_index1, new_index2; // Mapping to new indexes
+    vector< vector<int> > graph1, graph2; // Lists of neighbours per vertex
+
+    // Match the vertex v (new index) from the first partity with a vertex
+    // from the other partity.
+    // Time complexity O(number of edges in the graph)
+    bool match(int v);
+
+    // Auxilary variables used by the maximum matching algorithm
+    vector<int> matched1, matched2;
+    vector<bool> visited1, visited2;
 };
 
 void BipartiteGraph::add_edge(int index1, int index2) {
