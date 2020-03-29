@@ -1,4 +1,4 @@
-/* Written by Filip Hlasek 2018 */
+/* Written by Filip Hlasek 2020 */
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
